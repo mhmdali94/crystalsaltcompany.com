@@ -129,12 +129,6 @@ button, input, select, textarea {
 }
 
 /* Typography Helpers */
-.text-gradient {
-  background: var(--gradient-blue);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
 
 .text-blue { color: var(--blue-primary); }
 .text-gold { color: var(--accent-gold); }
@@ -2093,3 +2087,187 @@ body.lang-ar .csc-product-spec-row strong {
 .csc-contact-info p,
 .csc-footer a,
 .csc-topbar-item { overflow-wrap: anywhere; }
+
+/* ==========================================================================
+   Layout pass: certificate hero, ruled facts row, start-aligned headers,
+   pillar list instead of card grid, varied section rhythm
+   ========================================================================== */
+:root {
+  --space-section: clamp(64px, 8vw, 112px);
+  --space-section-tight: clamp(36px, 4.5vw, 56px);
+}
+
+.csc-section { padding: var(--space-section) 0; }
+
+/* Headline accent is solid ink, never gradient text */
+.csc-hero-title-accent { color: var(--blue-primary); }
+
+/* Section headers: start-aligned; title and intro side by side on wide screens */
+.csc-section-header {
+  text-align: start;
+  max-width: none;
+  margin: 0 0 clamp(32px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  column-gap: 56px;
+  align-items: end;
+}
+.csc-section-header > .csc-section-tag { grid-column: 1 / -1; justify-self: start; }
+.csc-section-header > .csc-section-title { margin-bottom: 0; }
+.csc-section-header > .csc-section-subtitle { max-width: 62ch; }
+.csc-section-header > .csc-section-title:last-child { grid-column: 1 / -1; }
+
+@media (max-width: 900px) {
+  .csc-section-header { grid-template-columns: 1fr; row-gap: 12px; }
+}
+
+/* Assay certificate card in the hero */
+.csc-hero-card::before { display: none; }
+.csc-assay-card { padding: 30px; border-radius: var(--radius-lg); }
+.csc-assay-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.csc-assay-kicker {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gray-500);
+}
+.csc-assay-meta {
+  margin: 8px 0 18px;
+  font-size: 0.88rem;
+  color: var(--gray-600);
+}
+.csc-assay-table {
+  width: 100%;
+  margin-bottom: 22px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.csc-assay-table th,
+.csc-assay-table td {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-200);
+  text-align: start;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+.csc-assay-table thead th {
+  padding-top: 0;
+  border-bottom: 1.5px solid var(--gray-900);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-500);
+}
+.csc-assay-table td,
+.csc-assay-table thead th:last-child {
+  text-align: right;
+  font-weight: 800;
+  color: var(--gray-900);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.csc-assay-table thead th:last-child { font-weight: 700; color: var(--gray-500); }
+.csc-assay-table td { unicode-bidi: plaintext; }
+body.lang-ar .csc-assay-table td,
+body.lang-ar .csc-assay-table thead th:last-child { text-align: left; }
+.csc-assay-table .is-lead th { font-weight: 700; color: var(--gray-900); }
+.csc-assay-table .is-lead td {
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  color: var(--blue-primary);
+}
+.csc-assay-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Facts row: a ruled summary line, not a gradient stat band */
+.csc-stats-band {
+  background: var(--pure-white);
+  color: var(--gray-900);
+  padding: var(--space-section-tight) 0;
+  box-shadow: none;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+.csc-stats-grid { gap: 0; text-align: start; }
+.csc-stat-item {
+  align-items: flex-start;
+  padding: 4px 28px;
+  border-inline-start: 1px solid var(--gray-200);
+}
+.csc-stat-item:first-child { border-inline-start: none; padding-inline-start: 0; }
+.csc-stat-num {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  color: var(--blue-primary);
+}
+.csc-stat-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--gray-600);
+}
+@media (max-width: 1024px) {
+  .csc-stats-grid { row-gap: 28px; }
+  .csc-stat-item:nth-child(odd) { border-inline-start: none; padding-inline-start: 0; }
+}
+
+/* Pillars: a ruled two-line list, not a grid of identical cards */
+.csc-pillars-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 0 40px;
+}
+.csc-pillar-card {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  column-gap: 14px;
+  align-items: start;
+  text-align: start;
+  padding: 22px 0 28px;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--gray-300);
+  border-radius: 0;
+  box-shadow: none;
+  align-content: start;
+}
+.csc-pillar-card:hover {
+  transform: none;
+  box-shadow: none;
+  background: none;
+  border-color: var(--blue-primary);
+}
+.csc-pillar-icon {
+  grid-row: span 2;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: var(--radius-sm);
+}
+.csc-pillar-icon img { width: 26px; height: 26px; }
+.csc-pillar-title { font-size: 1.05rem; margin-bottom: 6px; }
+
+/* Product cards: one quiet link each instead of seven identical gradient buttons */
+.csc-product-footer .csc-btn-primary {
+  padding: 4px 0;
+  background: none;
+  box-shadow: none;
+  color: var(--blue-primary);
+  font-size: 0.9rem;
+}
+.csc-product-footer .csc-btn-primary:hover {
+  transform: none;
+  box-shadow: none;
+  color: var(--blue-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* FAQ list aligns with its start-aligned section header */
+.csc-accordion { margin-inline: 0; max-width: 900px; }

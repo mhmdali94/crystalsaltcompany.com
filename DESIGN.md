@@ -206,6 +206,8 @@ This is a soft, lifted system. Cards, the header, the hero highlight card and fo
 ### Named Rules
 **The Navy-Tint Rule.** Every shadow is tinted with navy (10, 37, 64) or Assay Blue. A neutral grey or black shadow makes the page look dirty, which is the opposite of salt.
 
+**The Spacing Rhythm Rule.** Sections breathe on a fluid scale (`--space-section: clamp(64px, 8vw, 112px)`); the facts row uses the tighter `--space-section-tight`. Never return to one fixed padding for every section.
+
 **The Lift-on-Touch Rule.** Hover lifts are small and fast: a translateY of -2px for buttons and -6px for product cards, with the 0.28s `cubic-bezier(0.2, 0.8, 0.2, 1)` ease. No bounce, no scaling of whole sections.
 
 ## 5. Components
@@ -242,6 +244,18 @@ Friendly and tactile: fully rounded pills that lift slightly when touched.
 - **Tablet and phone (<1280px):** The menu and header buttons collapse into a hamburger that opens a 320px side drawer (sliding from the right in English, from the left in Arabic) with "Call Sales Desk" and WhatsApp buttons at the bottom. Below 480px the logo tile is hidden and the text wordmark carries the name.
 - **Phone (≤768px):** A fixed bottom bar with two equal buttons, Call Sales Desk (Assay Blue) and WhatsApp, replaces the floating chat bubble. It is the primary action on phones.
 
+### Assay Certificate Card (hero signature component)
+The first thing a buyer sees beside the headline: the independent SGS Egypt test results set like a lab sheet. White card, 20px radius, Lifted shadow, no accent stripe. A small kicker ("Independent test report"), the lab name as title, the reference number as a badge, the sample and date as a meta line, then a two-column table: parameter names in Body Slate, results right-aligned in tabular figures, a 1.5px Ink Navy rule under the header row, 1px Divider rules between rows. The lead row (NaCl) is set at 1.6rem in Assay Blue. Actions: "View the full report" (opens the scanned report in the viewer) and the company profile PDF. In Arabic the table mirrors but results stay left-to-right.
+
+### Facts Row
+A ruled summary line under the hero, not a stat band: white, hairline rules above and below, four facts separated by 1px Divider lines, figures in Assay Blue (clamp(2rem, 3.2vw, 2.8rem), 800), labels in sentence case Muted Slate. Only verifiable facts (founding year, number of grades, export ports, shipping terms).
+
+### Section Headers
+Start-aligned, never a centered stack. On wide screens the title sits in the left column and the intro paragraph in the right (grid 1.1fr / 0.9fr, 56px gap, bottom-aligned); the small tag spans above. Below 900px they stack.
+
+### Pillar List
+The "what you can expect" items are a ruled list, not cards: each item has a 1px Hairline top rule, a 40px icon tile beside a title and short description, no background, border or shadow.
+
 ### Specification Panel (signature component)
 The heart of "The Assay Certificate." A pale Mist or Ice Wash panel titled with a vial icon, holding a grid of small cells: the parameter name in Muted Slate above and the value in bold, with the headline figure (NaCl purity) larger and in Assay Blue. On product cards the same data appears as compact label/value rows. Values keep left-to-right reading order in Arabic.
 
@@ -261,8 +275,8 @@ The heart of "The Assay Certificate." A pale Mist or Ice Wash panel titled with 
 - **Don't** make it look like a **cheap Alibaba-style supplier page**: no clutter, no walls of badges or logos, no stock photography, no pop-ups, no "best price!!" energy.
 - **Don't** make it **over-designed or flashy**: no heavy animation, parallax, particle effects or decoration that competes with the product facts or slows the page.
 - **Don't** make it a **cold corporate site**: no faceless stock images or empty mission-statement prose; show the factory, the ports and the people who answer the phone.
-- **Don't** use gradient text (`background-clip: text`). The hero's `.text-gradient` line is a known deviation to replace with solid Assay Blue.
-- **Don't** add more big-number stat bands ("24+ / 10,000+ / 999+"). Put figures in context, next to the product or shipment they prove.
+- **Don't** use gradient text (`background-clip: text`). Accents are solid Assay Blue (`.csc-hero-title-accent`).
+- **Don't** turn the facts row back into a gradient stat band, and never put unverifiable numbers in it. Figures belong next to the product, report or shipment that proves them.
 - **Don't** repeat identical icon-heading-text card grids. Vary layout by content (spec panel, photo-led story, certificate image).
 - **Don't** use `border-left` or `border-right` wider than 1px as a colored accent stripe.
 - **Don't** use grey or black shadows, or any shadow without the navy or blue tint.
