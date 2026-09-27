@@ -1778,3 +1778,70 @@ body.lang-ar .csc-mobile-drawer.active {
 .csc-drawer-link:hover, .csc-drawer-link.active {
   color: var(--blue-primary);
 }
+
+/* ==========================================================================
+   RTL (Arabic) refinements
+   ========================================================================== */
+body.lang-ar .fa-arrow-right,
+body.lang-ar .fa-chevron-right,
+body.lang-ar .fa-angle-right {
+  transform: scaleX(-1);
+}
+
+body.lang-ar bdi[dir="ltr"],
+body.lang-ar a[href^="tel:"],
+body.lang-ar a[href^="mailto:"] {
+  unicode-bidi: isolate;
+}
+
+body.lang-ar .csc-lang-btn span {
+  font-family: var(--font-en);
+}
+
+/* Arabic script must not be letter-spaced (it breaks letter joining) */
+body.lang-ar * {
+  letter-spacing: 0 !important;
+}
+
+body.lang-ar .csc-nav-link,
+body.lang-ar .csc-brand-sub {
+  white-space: nowrap;
+}
+
+body.lang-ar .csc-nav-link {
+  padding: 8px 9px;
+}
+
+/* Numeric spec values ("≥ 98.5% – 99.2%") keep their LTR order and unmirrored signs */
+body.lang-ar .csc-product-specs strong,
+body.lang-ar .csc-product-spec-row strong {
+  unicode-bidi: plaintext;
+  text-align: right;
+}
+
+/* ==========================================================================
+   Small-screen overflow fixes (both languages)
+   ========================================================================== */
+.csc-hero-grid > *,
+.csc-split > *,
+.csc-service-layout > * {
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  #inquirySection .csc-container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .csc-hero-badge { white-space: normal; flex-wrap: wrap; }
+  .csc-topbar-right { flex-wrap: wrap; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .csc-brand-logo { height: 40px; }
+  .csc-brand-sub { display: none; }
+  .csc-lang-btn span { display: none; }
+  .csc-topbar-right a[href$=".html"] { display: none; }
+}

@@ -215,14 +215,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const destination = inquiryForm.querySelector('[name="destination"]')?.value || '';
       const message = inquiryForm.querySelector('[name="message"]')?.value || '';
 
-      const text = `*New Salt Export Inquiry - Crystal Salt Co.*\n` +
-        `👤 *Client Name:* ${name}\n` +
-        `📧 *Email:* ${email}\n` +
-        `📞 *Phone:* ${phone}\n` +
-        `🧂 *Product Required:* ${product}\n` +
-        (quantity ? `📦 *Quantity (Tons):* ${quantity}\n` : '') +
-        (destination ? `🚢 *Destination Port:* ${destination}\n` : '') +
-        `💬 *Message:* ${message}`;
+      const isArabic = document.body.classList.contains('lang-ar');
+      const text = isArabic
+        ? `*استفسار تصدير ملح جديد - شركة كريستال للملح*\n` +
+          `👤 *اسم العميل:* ${name}\n` +
+          `📧 *البريد الإلكتروني:* ${email}\n` +
+          `📞 *الهاتف:* ${phone}\n` +
+          `🧂 *المنتج المطلوب:* ${product}\n` +
+          (quantity ? `📦 *الكمية (طن):* ${quantity}\n` : '') +
+          (destination ? `🚢 *ميناء الوصول:* ${destination}\n` : '') +
+          `💬 *الرسالة:* ${message}`
+        : `*New Salt Export Inquiry - Crystal Salt Co.*\n` +
+          `👤 *Client Name:* ${name}\n` +
+          `📧 *Email:* ${email}\n` +
+          `📞 *Phone:* ${phone}\n` +
+          `🧂 *Product Required:* ${product}\n` +
+          (quantity ? `📦 *Quantity (Tons):* ${quantity}\n` : '') +
+          (destination ? `🚢 *Destination Port:* ${destination}\n` : '') +
+          `💬 *Message:* ${message}`;
 
       const waUrl = `https://wa.me/201222203726?text=${encodeURIComponent(text)}`;
       window.open(waUrl, '_blank');
