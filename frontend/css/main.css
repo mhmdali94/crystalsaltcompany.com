@@ -30,18 +30,20 @@
   --accent-gold: #E59819;
   --accent-gold-bg: #FFF8EB;
   --accent-emerald: #059669;
+  --whatsapp: #12823F;
+  --whatsapp-hover: #0F6E35;
 
   --gray-900: #0F1E36;
   --gray-800: #1E2E4A;
   --gray-700: #334466;
   --gray-600: #4B5E7E;
-  --gray-500: #6B7D9C;
-  --gray-400: #96A6C0;
+  --gray-500: #566987;
+  --gray-400: #5E7090;
   --gray-300: #CBD7E8;
   --gray-200: #E2ECF7;
   --gray-100: #F1F6FB;
 
-  --gradient-blue: linear-gradient(135deg, #00BFFF 0%, #026CE8 100%);
+  --gradient-blue: linear-gradient(135deg, #0077CC 0%, #026CE8 100%);
   --gradient-ice: linear-gradient(180deg, #FFFFFF 0%, #F3F8FD 100%);
   --gradient-soft: linear-gradient(135deg, #F0F7FD 0%, #E6F2FC 100%);
 
@@ -273,7 +275,7 @@ button, input, select, textarea {
 }
 
 .csc-nav-link:hover, .csc-nav-link.active {
-  color: var(--blue-primary);
+  color: var(--blue-hover);
   background: var(--ice-100);
 }
 
@@ -320,7 +322,7 @@ button, input, select, textarea {
 
 .csc-dropdown-item:hover, .csc-dropdown-item.active {
   background: var(--ice-100);
-  color: var(--blue-primary);
+  color: var(--blue-hover);
   transform: translateX(4px);
 }
 
@@ -381,16 +383,16 @@ body.lang-ar .csc-dropdown-item:hover {
 }
 
 .csc-btn-whatsapp {
-  background: #25D366;
+  background: var(--whatsapp);
   color: var(--pure-white);
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 4px 15px rgba(18, 130, 63, 0.25);
 }
 
 .csc-btn-whatsapp:hover {
-  background: #1FA855;
+  background: var(--whatsapp-hover);
   color: var(--pure-white);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 6px 20px rgba(18, 130, 63, 0.35);
 }
 
 .csc-btn-sm {
@@ -612,7 +614,7 @@ body.lang-ar .csc-dropdown-item:hover {
 
 .csc-card-badge {
   background: var(--ice-100);
-  color: var(--blue-primary);
+  color: var(--blue-hover);
   border: 1px solid var(--blue-primary);
   padding: 4px 12px;
   border-radius: var(--radius-full);
@@ -645,7 +647,7 @@ body.lang-ar .csc-dropdown-item:hover {
 
 /* STATS BAND - RADIANT LIGHT CYAN GRADIENT */
 .csc-stats-band {
-  background: linear-gradient(135deg, #026CE8 0%, #00BFFF 100%);
+  background: linear-gradient(135deg, #026CE8 0%, #0077CC 100%);
   color: var(--pure-white);
   padding: 60px 0;
   box-shadow: var(--shadow-md);
@@ -735,7 +737,7 @@ body.lang-ar .csc-dropdown-item:hover {
 /* Product Cards - Pure White */
 .csc-products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 30px;
 }
 
@@ -857,7 +859,7 @@ body.lang-ar .csc-product-badge {
 /* Why Choose Us (8 Pillars) - White Crystalline Cards */
 .csc-pillars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 24px;
 }
 
@@ -1040,7 +1042,7 @@ body.lang-ar .csc-split-badge {
 
 .csc-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 22px;
 }
 
@@ -1335,21 +1337,21 @@ body.lang-ar .csc-footer-links a:hover {
   left: 24px;
   width: 58px;
   height: 58px;
-  background: #25D366;
+  background: var(--whatsapp);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--pure-white);
   font-size: 1.9rem;
-  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 6px 25px rgba(18, 130, 63, 0.4);
   z-index: 999;
   transition: var(--transition-normal);
 }
 
 .csc-floating-whatsapp:hover {
   transform: scale(1.1) rotate(6deg);
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
+  box-shadow: 0 10px 30px rgba(18, 130, 63, 0.55);
   color: var(--pure-white);
 }
 
@@ -1996,3 +1998,98 @@ body.lang-ar .csc-product-spec-row strong {
   flex-direction: column;
   gap: 2px;
 }
+
+/* ==========================================================================
+   Mobile contact: drawer actions + sticky Call / WhatsApp bar
+   ========================================================================== */
+.csc-drawer-actions {
+  margin-top: auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.csc-drawer-actions .csc-btn {
+  width: 100%;
+  min-height: 46px;
+}
+
+.csc-mobile-cta { display: none; }
+
+@media (max-width: 768px) {
+  .csc-mobile-cta {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 950;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.97);
+    border-top: 1px solid var(--gray-200);
+    box-shadow: 0 -8px 24px rgba(10, 37, 64, 0.08);
+  }
+
+  .csc-mobile-cta a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    border-radius: var(--radius-full);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--pure-white);
+    text-decoration: none;
+  }
+
+  .csc-mobile-cta-call { background: var(--blue-primary); }
+  .csc-mobile-cta-wa { background: var(--whatsapp); }
+
+  body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+  .csc-floating-whatsapp { display: none; }
+  .csc-scroll-top { bottom: calc(84px + env(safe-area-inset-bottom)); }
+
+  /* Comfortable touch targets */
+  .csc-mobile-toggle { width: 44px; height: 44px; }
+  .csc-drawer-close { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .csc-topbar-item { min-height: 32px; display: inline-flex; align-items: center; }
+}
+
+.csc-mobile-drawer { overflow-y: auto; }
+
+/* ==========================================================================
+   Phone/tablet overflow fixes for inline-styled layouts
+   ========================================================================== */
+@media (max-width: 1024px) {
+  div[style*="grid-template-columns: 1.1fr 0.9fr"],
+  div[style*="grid-template-columns: 1.15fr 0.85fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* inline button rows wrap instead of pushing the page wider */
+  div[style*="display: flex"][style*="gap"] { flex-wrap: wrap; }
+  div[style*="grid-template-columns: repeat(auto-fit, minmax(320px"] {
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)) !important;
+  }
+  .csc-split-badge { left: 12px; bottom: 12px; }
+  body.lang-ar .csc-split-badge { left: auto; right: 12px; }
+  .csc-hero-card { padding: 24px; }
+}
+
+@media (max-width: 480px) {
+  /* the text wordmark carries the name (in the page language); drop the wide logo tile */
+  .csc-header .csc-brand-logo { display: none; }
+  .csc-btn { white-space: normal; text-align: center; }
+}
+
+/* Long emails / URLs may break rather than widen their card */
+.csc-contact-info { min-width: 0; }
+.csc-contact-info a,
+.csc-contact-info p,
+.csc-footer a,
+.csc-topbar-item { overflow-wrap: anywhere; }

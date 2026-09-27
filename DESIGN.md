@@ -7,7 +7,7 @@ colors:
   brine-cyan: "#00BFFF"
   brine-cyan-light: "#1AD1FF"
   seal-gold: "#E59819"
-  whatsapp-green: "#25D366"
+  whatsapp-green: "#12823F"
   paper-white: "#FFFFFF"
   ice-wash: "#F4F9FD"
   ice-tint: "#EAF3FB"
@@ -16,8 +16,8 @@ colors:
   ink-slate: "#1E2E4A"
   body-slate: "#334466"
   muted-slate: "#4B5E7E"
-  caption-slate: "#6B7D9C"
-  faint-slate: "#96A6C0"
+  caption-slate: "#566987"
+  faint-slate: "#5E7090"
   hairline: "#CBD7E8"
   divider: "#E2ECF7"
   mist: "#F1F6FB"
@@ -140,12 +140,12 @@ White paper and slate-navy ink, with a single assay blue as the voice and a cyan
 - **Assay Blue Pressed** (#0156BD): Hover and pressed state for blue text and solid blue surfaces.
 
 ### Secondary
-- **Brine Cyan** (#00BFFF): The lighter partner of Assay Blue. Appears only as the far end of the primary button and stats-band gradient (135deg, Brine Cyan to Assay Blue) and in faint radial glows in the hero background.
+- **Brine Cyan** (#00BFFF): Faint radial glows in the hero background only. It is too light to carry white text, so it is no longer part of the button or stats-band gradient (those now run from #0077CC to Assay Blue, keeping white text at 4.7:1 or better).
 - **Brine Cyan Light** (#1AD1FF): Small icon accents on dark surfaces (map header pin, footer brochure icons).
 
 ### Tertiary
 - **Seal Gold** (#E59819): Reserved for rare certification or award marks, like the gold seal on a certificate. Currently almost unused; keep it that way.
-- **WhatsApp Green** (#25D366): Functional only, for WhatsApp buttons and the floating chat button. Never used decoratively.
+- **WhatsApp Green** (#12823F): Functional only, for WhatsApp buttons, the floating chat button and the mobile contact bar. Deliberately darker than the WhatsApp brand green (#25D366) so white labels pass WCAG AA (4.9:1). Never used decoratively.
 
 ### Neutral
 - **Paper White** (#FFFFFF): Default page and card surface.
@@ -156,8 +156,8 @@ White paper and slate-navy ink, with a single assay blue as the voice and a cyan
 - **Ink Slate** (#1E2E4A): Form labels and emphasized secondary text.
 - **Body Slate** (#334466): Default body text.
 - **Muted Slate** (#4B5E7E): Section subtitles and supporting paragraphs.
-- **Caption Slate** (#6B7D9C): Captions, metadata, the brand sub-line.
-- **Faint Slate** (#96A6C0): Placeholder text and footer meta. Check contrast before using it for anything readable.
+- **Caption Slate** (#566987): Captions, metadata, the brand sub-line.
+- **Faint Slate** (#5E7090): Footer bio, brochure notes and other quiet text; the lightest grey allowed for readable text (4.7:1 on Ice Wash).
 - **Hairline** (#CBD7E8): Outline-button borders on light sections and stronger dividers.
 - **Divider** (#E2ECF7): The default 1px border on cards, inputs, sections and the header.
 - **Mist** (#F1F6FB): Faint fills behind spec rows.
@@ -213,7 +213,7 @@ This is a soft, lifted system. Cards, the header, the hero highlight card and fo
 ### Buttons
 Friendly and tactile: fully rounded pills that lift slightly when touched.
 - **Shape:** Pill (9999px radius). Default padding 11px 22px at 0.9rem, weight 700; small 7px 16px at 0.82rem; large 14px 30px at 1rem. Icon and label sit 8px apart.
-- **Primary:** Brine Cyan to Assay Blue gradient (135deg), Paper White text, Blue Glow shadow. Hover lifts -2px and deepens the glow.
+- **Primary:** #0077CC to Assay Blue gradient (135deg), Paper White text, Blue Glow shadow. Hover lifts -2px and deepens the glow.
 - **Outline:** Paper White fill, Assay Blue text and 1.5px Assay Blue border, Rest shadow. Hover fills solid Assay Blue with white text and lifts -2px. On light sections inside content, the border may soften to Hairline with Ink Navy text.
 - **WhatsApp:** WhatsApp Green fill, white text, soft green glow. Used for every "chat" or "send via WhatsApp" action and nothing else.
 - **Language switch:** Small white pill with a 1.5px Hairline border, a flag and the language name ("عربي" / "English").
@@ -238,7 +238,9 @@ Friendly and tactile: fully rounded pills that lift slightly when touched.
 - **Top bar:** Thin Mist/Ice strip with location, phone and email on one side and legal links plus social icons on the other, 0.82rem.
 - **Header:** Sticky, 94% white with an 18px backdrop blur and a hairline blue bottom border; the shadow deepens once the page scrolls. The logo tile and "CRYSTAL SALT" wordmark (the second word in Assay Blue) on one side; the menu, language switch, PDF and quote buttons on the other.
 - **Links:** Body Slate, 0.92rem, 600, 14px-radius hit area; hover and active states fill Ice Tint with Assay Blue text.
-- **Mobile (≤768px):** The menu and header buttons collapse into a hamburger that opens a 320px side drawer (sliding from the right in English, from the left in Arabic) with a WhatsApp button pinned at the bottom.
+- **Desktop (≥1280px):** Full menu; the brochure button is icon-only and the brand sub-line is hidden so everything fits the 1200px content width on one line. Nothing in the header may shrink or wrap.
+- **Tablet and phone (<1280px):** The menu and header buttons collapse into a hamburger that opens a 320px side drawer (sliding from the right in English, from the left in Arabic) with "Call Sales Desk" and WhatsApp buttons at the bottom. Below 480px the logo tile is hidden and the text wordmark carries the name.
+- **Phone (≤768px):** A fixed bottom bar with two equal buttons, Call Sales Desk (Assay Blue) and WhatsApp, replaces the floating chat bubble. It is the primary action on phones.
 
 ### Specification Panel (signature component)
 The heart of "The Assay Certificate." A pale Mist or Ice Wash panel titled with a vial icon, holding a grid of small cells: the parameter name in Muted Slate above and the value in bold, with the headline figure (NaCl purity) larger and in Assay Blue. On product cards the same data appears as compact label/value rows. Values keep left-to-right reading order in Arabic.
