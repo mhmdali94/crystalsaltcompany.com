@@ -545,31 +545,9 @@ body.lang-ar .csc-dropdown-item:hover {
   margin-bottom: 40px;
 }
 
-.csc-hero-specs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding-top: 24px;
-  border-top: 1px solid var(--gray-200);
-}
 
-.csc-hero-spec-item {
-  display: flex;
-  flex-direction: column;
-}
 
-.csc-hero-spec-num {
-  font-size: 1.7rem;
-  font-weight: 800;
-  color: var(--blue-primary);
-  line-height: 1.2;
-}
 
-.csc-hero-spec-label {
-  font-size: 0.82rem;
-  color: var(--gray-600);
-  font-weight: 600;
-}
 
 /* Hero Right Floating White Card */
 .csc-hero-card {
@@ -593,12 +571,6 @@ body.lang-ar .csc-dropdown-item:hover {
   border-radius: 3px;
 }
 
-.csc-hero-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
 
 .csc-hero-card-title {
   font-size: 1.25rem;
@@ -617,27 +589,8 @@ body.lang-ar .csc-dropdown-item:hover {
   text-transform: uppercase;
 }
 
-.csc-hero-card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 24px;
-}
 
-.csc-hero-card-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 0.92rem;
-  color: var(--gray-700);
-  line-height: 1.55;
-}
 
-.csc-hero-card-item i {
-  color: var(--blue-primary);
-  font-size: 1.15rem;
-  margin-top: 3px;
-}
 
 /* STATS BAND - RADIANT LIGHT CYAN GRADIENT */
 .csc-stats-band {
@@ -777,7 +730,7 @@ body.lang-ar .csc-dropdown-item:hover {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   color: var(--blue-primary);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 800;
   padding: 5px 12px;
   border-radius: var(--radius-full);
@@ -1685,7 +1638,6 @@ body.lang-ar .csc-footer-links a:hover {
   .csc-mobile-toggle { display: flex; }
   .csc-topbar-left { display: none; }
   .csc-topbar-inner { justify-content: center; }
-  .csc-hero-specs { grid-template-columns: 1fr; gap: 16px; }
   .csc-contact-cards { grid-template-columns: 1fr; }
   .csc-form-grid { grid-template-columns: 1fr; }
   .csc-footer-grid { grid-template-columns: 1fr; }
@@ -2271,3 +2223,10 @@ body.lang-ar .csc-assay-table thead th:last-child { text-align: left; }
 
 /* FAQ list aligns with its start-aligned section header */
 .csc-accordion { margin-inline: 0; max-width: 900px; }
+
+/* Pressed state: a small, quick press for every button */
+.csc-btn:active,
+.csc-mobile-cta a:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.08s;
+}
