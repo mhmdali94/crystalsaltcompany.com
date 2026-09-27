@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-27T13:28:28.373455+00:00",
+  "title": "Design System: Crystal Salt Company",
+  "extensions": {
+    "colorMeta": {
+      "assay-blue": {
+        "role": "primary",
+        "displayName": "Assay Blue",
+        "canonical": "oklch(55.6% 0.205 258.0)",
+        "tonalRamp": [
+          "#000333",
+          "#001E60",
+          "#003C90",
+          "#055BC4",
+          "#217DF9",
+          "#59A4FF",
+          "#8BCAFF",
+          "#BCF1FF"
+        ]
+      },
+      "assay-blue-pressed": {
+        "role": "primary",
+        "displayName": "Assay Blue Pressed",
+        "canonical": "oklch(47.6% 0.177 258.2)",
+        "tonalRamp": [
+          "#00062D",
+          "#002158",
+          "#093E86",
+          "#1F5EB7",
+          "#377FE9",
+          "#66A5FF",
+          "#94CBFF",
+          "#C3F1FF"
+        ]
+      },
+      "brine-cyan": {
+        "role": "secondary",
+        "displayName": "Brine Cyan",
+        "canonical": "oklch(75.5% 0.153 231.6)",
+        "tonalRamp": [
+          "#000D24",
+          "#002A4A",
+          "#004A73",
+          "#006C9F",
+          "#008FCC",
+          "#34B3E9",
+          "#78D6FF",
+          "#AFFAFF"
+        ]
+      },
+      "brine-cyan-light": {
+        "role": "secondary",
+        "displayName": "Brine Cyan Light",
+        "canonical": "oklch(79.9% 0.144 221.8)",
+        "tonalRamp": [
+          "#000F1F",
+          "#002C43",
+          "#004C6A",
+          "#006F94",
+          "#0093BF",
+          "#2BB6DC",
+          "#75D9FA",
+          "#ADFCFF"
+        ]
+      },
+      "seal-gold": {
+        "role": "tertiary",
+        "displayName": "Seal Gold",
+        "canonical": "oklch(73.9% 0.153 71.9)",
+        "tonalRamp": [
+          "#1C0300",
+          "#3F1900",
+          "#653400",
+          "#8E5100",
+          "#B96F00",
+          "#D7963A",
+          "#F6BD75",
+          "#FFE5AB"
+        ]
+      },
+      "whatsapp-green": {
+        "role": "tertiary",
+        "displayName": "Whatsapp Green",
+        "canonical": "oklch(76.1% 0.201 149.7)",
+        "tonalRamp": [
+          "#001400",
+          "#003300",
+          "#005506",
+          "#007A1D",
+          "#00A136",
+          "#3EC267",
+          "#7EE495",
+          "#B4FFC4"
+        ]
+      },
+      "paper-white": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "ice-wash": {
+        "role": "neutral",
+        "displayName": "Ice Wash",
+        "canonical": "oklch(97.9% 0.008 241.7)",
+        "tonalRamp": [
+          "#080C0E",
+          "#222628",
+          "#3F4346",
+          "#5E6265",
+          "#7E8386",
+          "#A1A6A9",
+          "#C5CACE",
+          "#EAEFF3"
+        ]
+      },
+      "ice-tint": {
+        "role": "neutral",
+        "displayName": "Ice Tint",
+        "canonical": "oklch(96.0% 0.014 244.7)",
+        "tonalRamp": [
+          "#060C11",
+          "#1F262C",
+          "#3C4349",
+          "#5B6269",
+          "#7B838B",
+          "#9EA6AE",
+          "#C2CAD2",
+          "#E7F0F8"
+        ]
+      },
+      "ice-rule": {
+        "role": "neutral",
+        "displayName": "Ice Rule",
+        "canonical": "oklch(92.4% 0.027 246.4)",
+        "tonalRamp": [
+          "#070C10",
+          "#1F262D",
+          "#3A434C",
+          "#57636E",
+          "#768492",
+          "#9AA7B3",
+          "#BFCBD5",
+          "#E6F0F9"
+        ]
+      },
+      "ink-navy": {
+        "role": "neutral",
+        "displayName": "Ink Navy",
+        "canonical": "oklch(23.6% 0.051 259.4)",
+        "tonalRamp": [
+          "#060B15",
+          "#1C2534",
+          "#364356",
+          "#52627B",
+          "#7183A1",
+          "#95A6C1",
+          "#BBCAE2",
+          "#E3EFFF"
+        ]
+      },
+      "ink-slate": {
+        "role": "neutral",
+        "displayName": "Ink Slate",
+        "canonical": "oklch(30.2% 0.055 261.0)",
+        "tonalRamp": [
+          "#050B16",
+          "#1C2536",
+          "#364258",
+          "#52627D",
+          "#7083A4",
+          "#94A6C4",
+          "#BBCAE4",
+          "#E2EFFF"
+        ]
+      },
+      "body-slate": {
+        "role": "neutral",
+        "displayName": "Body Slate",
+        "canonical": "oklch(38.8% 0.062 263.5)",
+        "tonalRamp": [
+          "#050B18",
+          "#1B2538",
+          "#35425B",
+          "#516181",
+          "#6F82A8",
+          "#94A5C7",
+          "#BACAE7",
+          "#E2EFFF"
+        ]
+      },
+      "muted-slate": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "oklch(48.0% 0.057 260.6)",
+        "tonalRamp": [
+          "#050B17",
+          "#1B2536",
+          "#354259",
+          "#51627E",
+          "#6F83A5",
+          "#94A6C4",
+          "#BACAE5",
+          "#E2EFFF"
+        ]
+      },
+      "caption-slate": {
+        "role": "neutral",
+        "displayName": "Caption Slate",
+        "canonical": "oklch(58.7% 0.052 261.2)",
+        "tonalRamp": [
+          "#060B16",
+          "#1C2535",
+          "#364257",
+          "#53627C",
+          "#7183A2",
+          "#95A6C2",
+          "#BCCAE3",
+          "#E3EFFF"
+        ]
+      },
+      "faint-slate": {
+        "role": "neutral",
+        "displayName": "Faint Slate",
+        "canonical": "oklch(72.1% 0.042 260.1)",
+        "tonalRamp": [
+          "#070B14",
+          "#1E2532",
+          "#384253",
+          "#556277",
+          "#74839C",
+          "#98A6BC",
+          "#BECADE",
+          "#E5EFFF"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(87.5% 0.027 257.0)",
+        "tonalRamp": [
+          "#080B11",
+          "#20252D",
+          "#3B434D",
+          "#59626F",
+          "#788393",
+          "#9CA6B4",
+          "#C1CAD6",
+          "#E8EFF9"
+        ]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "canonical": "oklch(93.9% 0.018 250.6)",
+        "tonalRamp": [
+          "#060C13",
+          "#1E262E",
+          "#3B434C",
+          "#5A626C",
+          "#7A838D",
+          "#9DA6B0",
+          "#C1CAD5",
+          "#E6F0FB"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "oklch(97.1% 0.009 247.9)",
+        "tonalRamp": [
+          "#080C0F",
+          "#222529",
+          "#3E4246",
+          "#5D6266",
+          "#7E8387",
+          "#A1A6AA",
+          "#C5CACF",
+          "#EAEFF4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section and page-banner titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Product names, card and split-section headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, capped near 65-75ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase section tags and badges (English only)."
+      },
+      "arabic": {
+        "displayName": "Arabic (Cairo)",
+        "purpose": "All text on RTL pages via body.lang-ar; no letter-spacing."
+      }
+    },
+    "shadows": [
+      {
+        "name": "rest",
+        "value": "0 2px 8px rgba(10, 37, 64, 0.04)",
+        "purpose": "Cards, inputs, badges at rest."
+      },
+      {
+        "name": "raised",
+        "value": "0 8px 24px rgba(10, 37, 64, 0.07)",
+        "purpose": "Stats band, dropdowns."
+      },
+      {
+        "name": "floating",
+        "value": "0 16px 40px rgba(10, 37, 64, 0.09)",
+        "purpose": "Hovered contact and pillar cards."
+      },
+      {
+        "name": "lifted",
+        "value": "0 24px 60px rgba(10, 37, 64, 0.12)",
+        "purpose": "Hero card, hovered product cards, map panel."
+      },
+      {
+        "name": "blue-glow",
+        "value": "0 4px 18px rgba(2, 108, 232, 0.28)",
+        "purpose": "Primary buttons only."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px rgba(2, 108, 232, 0.12)",
+        "purpose": "Focused inputs."
+      }
+    ],
+    "motion": [
+      {
+        "name": "fast",
+        "value": "0.16s ease",
+        "purpose": "Color and background changes on links and inputs."
+      },
+      {
+        "name": "normal",
+        "value": "0.28s cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Hover lifts on buttons and cards."
+      },
+      {
+        "name": "smooth",
+        "value": "0.45s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Drawer and larger transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-sm",
+        "value": "480px"
+      },
+      {
+        "name": "tablet",
+        "value": "768px"
+      },
+      {
+        "name": "desktop-sm",
+        "value": "1024px"
+      },
+      {
+        "name": "container",
+        "value": "1240px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call to action (Get a Quote, Explore Products).",
+      "html": "<button class=\"ds-btn-primary\">Request Export Quote</button>",
+      "css": ".ds-btn-primary{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:11px 22px;font-size:0.9rem;font-weight:700;color:#FFFFFF;background:linear-gradient(135deg,#00BFFF 0%,#026CE8 100%);border:none;border-radius:9999px;box-shadow:0 4px 18px rgba(2,108,232,0.28);cursor:pointer;transition:transform .28s cubic-bezier(0.2,0.8,0.2,1),box-shadow .28s cubic-bezier(0.2,0.8,0.2,1);}.ds-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(2,108,232,0.4);}.ds-btn-primary:focus-visible{outline:3px solid rgba(2,108,232,0.35);outline-offset:3px;}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action (Profile PDF, Request Export Quote beside a primary).",
+      "html": "<button class=\"ds-btn-outline\">Company Profile PDF</button>",
+      "css": ".ds-btn-outline{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:11px 22px;font-size:0.9rem;font-weight:700;color:#026CE8;background:#FFFFFF;border:1.5px solid #026CE8;border-radius:9999px;box-shadow:0 2px 8px rgba(10,37,64,0.04);cursor:pointer;transition:all .28s cubic-bezier(0.2,0.8,0.2,1);}.ds-btn-outline:hover{background:#026CE8;color:#FFFFFF;transform:translateY(-2px);box-shadow:0 6px 18px rgba(2,108,232,0.2);}.ds-btn-outline:focus-visible{outline:3px solid rgba(2,108,232,0.35);outline-offset:3px;}"
+    },
+    {
+      "name": "WhatsApp Button",
+      "kind": "button",
+      "refersTo": "button-whatsapp",
+      "description": "Every chat / send-via-WhatsApp action, nothing else.",
+      "html": "<button class=\"ds-btn-wa\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z\"/></svg>Send via WhatsApp</button>",
+      "css": ".ds-btn-wa{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:11px 22px;font-size:0.9rem;font-weight:700;color:#FFFFFF;background:#25D366;border:none;border-radius:9999px;box-shadow:0 4px 15px rgba(37,211,102,0.25);cursor:pointer;transition:transform .28s cubic-bezier(0.2,0.8,0.2,1);}.ds-btn-wa:hover{transform:translateY(-2px);}.ds-btn-wa:focus-visible{outline:3px solid rgba(37,211,102,0.4);outline-offset:3px;}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Inquiry form field with label.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-label\">Estimated Quantity (Metric Tons)</span><input class=\"ds-input\" placeholder=\"e.g. 5,000 Tons\"></label>",
+      "css": ".ds-field{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;display:flex;flex-direction:column;gap:8px;max-width:360px;}.ds-label{font-size:0.85rem;font-weight:700;color:#1E2E4A;}.ds-input{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;padding:13px 18px;font-size:0.95rem;color:#0F1E36;background:#F4F9FD;border:1.5px solid #E2ECF7;border-radius:14px;outline:none;transition:all .16s ease;}.ds-input::placeholder{color:#96A6C0;}.ds-input:focus{background:#FFFFFF;border-color:#026CE8;box-shadow:0 0 0 3px rgba(2,108,232,0.12);}"
+    },
+    {
+      "name": "Navigation Links",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Header menu with active state.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-active\" href=\"#\">Home</a><a class=\"ds-nav-link\" href=\"#\">About Us</a><a class=\"ds-nav-link\" href=\"#\">Our Products</a><a class=\"ds-nav-link\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;display:flex;gap:4px;}.ds-nav-link{padding:8px 14px;font-size:0.92rem;font-weight:600;color:#334466;text-decoration:none;border-radius:14px;transition:all .16s ease;}.ds-nav-link:hover,.ds-nav-link.ds-active{color:#026CE8;background:#EAF3FB;}.ds-nav-link:focus-visible{outline:2px solid #026CE8;outline-offset:2px;}"
+    },
+    {
+      "name": "Product Badge",
+      "kind": "chip",
+      "refersTo": "section-tag",
+      "description": "Grade label over product photos.",
+      "html": "<span class=\"ds-badge\">Food Grade</span>",
+      "css": ".ds-badge{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;display:inline-block;padding:5px 12px;font-size:0.72rem;font-weight:800;text-transform:uppercase;color:#026CE8;background:rgba(255,255,255,0.95);border:1px solid #026CE8;border-radius:9999px;box-shadow:0 2px 8px rgba(10,37,64,0.04);}"
+    },
+    {
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Product with photo, badge, description and spec rows.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-body\"><h3 class=\"ds-card-title\">Double Washed Salt</h3><p class=\"ds-card-text\">Two-stage hydro-purified salt with exceptional whiteness.</p><div class=\"ds-row\"><span>NaCl Purity:</span><strong>&ge; 99.4%</strong></div><div class=\"ds-row\"><span>Packaging:</span><strong>Jumbo Bags / 50kg PP</strong></div></div></article>",
+      "css": ".ds-card{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;max-width:340px;background:#FFFFFF;border:1px solid #E2ECF7;border-radius:20px;box-shadow:0 2px 8px rgba(10,37,64,0.04);transition:all .28s cubic-bezier(0.2,0.8,0.2,1);}.ds-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(10,37,64,0.12);border-color:#026CE8;}.ds-card-body{padding:24px;}.ds-card-title{margin:0 0 10px;font-size:1.35rem;font-weight:800;color:#0F1E36;}.ds-card-text{margin:0 0 16px;font-size:0.92rem;line-height:1.65;color:#4B5E7E;}.ds-row{display:flex;justify-content:space-between;gap:12px;padding:8px 12px;font-size:0.85rem;color:#6B7D9C;background:#F1F6FB;border-radius:8px;margin-top:6px;}.ds-row strong{color:#0F1E36;}"
+    },
+    {
+      "name": "Specification Panel",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Signature 'Assay Certificate' spec grid; headline figure in Assay Blue.",
+      "html": "<div class=\"ds-spec\"><h4 class=\"ds-spec-title\">Typical Chemical &amp; Physical Specifications</h4><div class=\"ds-spec-grid\"><div class=\"ds-cell\"><span>Sodium Chloride (NaCl)</span><strong class=\"ds-lead\">&ge; 98.5% – 99.2%</strong></div><div class=\"ds-cell\"><span>Moisture Content</span><strong>&le; 2.5% – 3.5%</strong></div><div class=\"ds-cell\"><span>Water Insolubles</span><strong>&le; 0.2%</strong></div></div></div>",
+      "css": ".ds-spec{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;background:#F4F9FD;border:1px solid #E2ECF7;border-radius:20px;padding:26px;max-width:640px;}.ds-spec-title{margin:0 0 16px;font-size:1.15rem;font-weight:700;color:#0F1E36;}.ds-spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;}.ds-cell{display:flex;flex-direction:column;gap:6px;padding:14px 16px;background:#FFFFFF;border:1px solid #E2ECF7;border-radius:14px;font-size:0.82rem;color:#4B5E7E;}.ds-cell strong{font-size:0.95rem;font-weight:800;color:#0F1E36;unicode-bidi:plaintext;}.ds-cell .ds-lead{font-size:1.1rem;color:#026CE8;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Assay Certificate",
+    "overview": "**Creative North Star: \"The Assay Certificate\"**\n\nThe site should read like a laboratory analysis certificate: clean white paper, exact figures set in blue ink, and every claim backed by a number. A buyer who has never heard of Crystal Salt opens it on a phone and, within a minute, sees purity percentages, grain sizes, packaging weights and loading ports laid out as clearly as a stamped lab sheet. The design's confidence comes from that precision, not from decoration.\n\nThe surface is overwhelmingly white and ice-pale, with one confident blue carrying all the meaning (links, figures, actions, the active state). Warmth comes from shape rather than color: pill-shaped buttons, softly rounded cards, gentle blue-tinted shadows that lift content off the page, and real photographs of the refinery, stockpiles and ports. The result should feel friendly to touch and exact to read.\n\nThis system explicitly rejects the three looks named in PRODUCT.md: the **cheap Alibaba-style supplier page** (clutter, badges, stock photos, \"best price!!\" energy), the **over-designed or flashy site** (effects that compete with the facts), and the **cold corporate site** (faceless, no story, no people). Arabic (RTL, Cairo) and English (LTR, Plus Jakarta Sans) are equal citizens of the same system.",
+    "keyCharacteristics": [
+      "White paper, blue ink: near-monochrome surfaces with a single strong blue for meaning.",
+      "Figures are the heroes: specifications, percentages and tonnage get the strongest visual weight.",
+      "Friendly, tactile controls: pill buttons, 14 to 28px radii, soft lift on hover.",
+      "Soft, blue-tinted elevation; never grey or black shadows.",
+      "Real photography of real places; no stock imagery.",
+      "Bilingual by construction: every component mirrors cleanly between RTL and LTR."
+    ],
+    "rules": [
+      {
+        "name": "The One Ink Rule",
+        "body": "Assay Blue is the only color that means something. If a second saturated color appears outside WhatsApp buttons or a rare gold seal, it must justify itself or go.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper Rule",
+        "body": "Surfaces stay white or ice-pale. Dark navy panels are the exception (the product-page quote box, the map header), never the rhythm of the page.",
+        "section": "colors"
+      },
+      {
+        "name": "The Defined Token Rule",
+        "body": "Only use variables that exist in `:root`. The inline styles currently reference `--navy-900`, `--navy-950`, `--blue-600`, `--white` and `--gray-50`, none of which are defined, so those elements silently lose their color. Map them to Ink Navy, Assay Blue, Paper White and Ice Wash, or define them as aliases.",
+        "section": "colors"
+      },
+      {
+        "name": "The Figures-First Rule",
+        "body": "Numbers that prove quality (purity percentages, grain sizes, tonnage, ppm) are set bolder and larger than the words around them, often in Assay Blue. On the certificate, the result column is what you read first.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Tracking-in-Arabic Rule",
+        "body": "Letter-spacing and uppercase are forbidden on Arabic text: tracking breaks the joins between Arabic letters. `body.lang-ar` resets `letter-spacing` to 0 everywhere.",
+        "section": "typography"
+      },
+      {
+        "name": "The Readable-Order Rule",
+        "body": "Phone numbers, emails, and figures like \"≥ 98.5% – 99.2%\" must keep their left-to-right order inside Arabic pages. Wrap them in `<bdi dir=\"ltr\">` or use `unicode-bidi: plaintext` so the ≥ and ≤ signs never mirror.",
+        "section": "typography"
+      },
+      {
+        "name": "The Navy-Tint Rule",
+        "body": "Every shadow is tinted with navy (10, 37, 64) or Assay Blue. A neutral grey or black shadow makes the page look dirty, which is the opposite of salt.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Lift-on-Touch Rule",
+        "body": "Hover lifts are small and fast: a translateY of -2px for buttons and -6px for product cards, with the 0.28s `cubic-bezier(0.2, 0.8, 0.2, 1)` ease. No bounce, no scaling of whole sections.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** lead every product and section with its proof: a purity figure, a spec table, a lab certificate photo or a real shipment. Evidence over claims.",
+      "**Do** keep surfaces Paper White (#FFFFFF) or Ice Wash (#F4F9FD), and let Assay Blue (#026CE8) be the only color that carries meaning.",
+      "**Do** use real photographs of the refinery, stockpiles, packaging lines and ports.",
+      "**Do** use pill buttons (9999px) and 14 to 28px card radii, with navy-tinted shadows and small hover lifts (-2px buttons, -6px cards).",
+      "**Do** design every component in both Arabic (RTL, Cairo) and English (LTR, Plus Jakarta Sans), and check both before shipping.",
+      "**Do** keep numbers, units, phone numbers and emails in left-to-right order inside Arabic text (`<bdi dir=\"ltr\">` or `unicode-bidi: plaintext`).",
+      "**Do** keep pages light for slow mobile connections: compress and lazy-load images, and never make content depend on the hero video.",
+      "**Do** meet WCAG AA contrast; body text is Body Slate (#334466) or darker on white."
+    ],
+    "donts": [
+      "**Don't** make it look like a **cheap Alibaba-style supplier page**: no clutter, no walls of badges or logos, no stock photography, no pop-ups, no \"best price!!\" energy.",
+      "**Don't** make it **over-designed or flashy**: no heavy animation, parallax, particle effects or decoration that competes with the product facts or slows the page.",
+      "**Don't** make it a **cold corporate site**: no faceless stock images or empty mission-statement prose; show the factory, the ports and the people who answer the phone.",
+      "**Don't** use gradient text (`background-clip: text`). The hero's `.text-gradient` line is a known deviation to replace with solid Assay Blue.",
+      "**Don't** add more big-number stat bands (\"24+ / 10,000+ / 999+\"). Put figures in context, next to the product or shipment they prove.",
+      "**Don't** repeat identical icon-heading-text card grids. Vary layout by content (spec panel, photo-led story, certificate image).",
+      "**Don't** use `border-left` or `border-right` wider than 1px as a colored accent stripe.",
+      "**Don't** use grey or black shadows, or any shadow without the navy or blue tint.",
+      "**Don't** apply letter-spacing or uppercase to Arabic text.",
+      "**Don't** reference CSS variables that aren't defined in `:root` (currently `--navy-900`, `--navy-950`, `--blue-600`, `--white`, `--gray-50`).",
+      "**Don't** use em dashes in interface copy; use commas, colons or periods."
+    ]
+  }
+}

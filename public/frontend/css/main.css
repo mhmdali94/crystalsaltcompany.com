@@ -926,6 +926,7 @@ body.lang-ar .csc-product-badge {
   align-items: center;
 }
 
+.csc-split-content h2,
 .csc-split-content h3 {
   font-size: 2.1rem;
   font-weight: 800;
@@ -1220,6 +1221,8 @@ body.lang-ar .csc-split-badge {
   border: 1px solid var(--gray-200);
 }
 
+.csc-contact-info h2,
+.csc-contact-info h3,
 .csc-contact-info h4 {
   font-size: 1.1rem;
   font-weight: 800;
@@ -1253,6 +1256,7 @@ body.lang-ar .csc-split-badge {
   margin-bottom: 60px;
 }
 
+.csc-footer-col h2,
 .csc-footer-col h5 {
   color: var(--gray-900);
   font-size: 1.1rem;
@@ -1261,6 +1265,7 @@ body.lang-ar .csc-split-badge {
   position: relative;
 }
 
+.csc-footer-col h2::after,
 .csc-footer-col h5::after {
   content: '';
   position: absolute;
@@ -1272,7 +1277,8 @@ body.lang-ar .csc-split-badge {
   border-radius: 2px;
 }
 
-body.lang-ar .csc-footer-col h5::after {
+body.lang-ar .csc-footer-col h2::after,
+.csc-footer-col h5::after {
   left: auto;
   right: 0;
 }
@@ -1844,4 +1850,108 @@ body.lang-ar .csc-product-spec-row strong {
   .csc-brand-sub { display: none; }
   .csc-lang-btn span { display: none; }
   .csc-topbar-right a[href$=".html"] { display: none; }
+}
+
+/* ==========================================================================
+   Hardening: missing tokens, focus, reduced motion, form feedback
+   ========================================================================== */
+
+/* Aliases for token names used in inline styles (previously undefined) */
+:root {
+  --navy-900: var(--gray-900);
+  --navy-950: var(--gray-900);
+  --blue-600: var(--blue-primary);
+  --white: var(--pure-white);
+  --gray-50: var(--ice-50);
+  --error: #C62828;
+  --error-bg: #FDF1F1;
+  --success: #047857;
+  --success-bg: #ECFDF5;
+}
+
+/* Visible keyboard focus everywhere (mouse clicks stay clean) */
+:focus-visible {
+  outline: 3px solid rgba(2, 108, 232, 0.6);
+  outline-offset: 3px;
+}
+
+.csc-footer :focus-visible,
+.csc-stats-band :focus-visible {
+  outline-color: var(--blue-primary);
+}
+
+.csc-gallery-item:focus-visible .csc-gallery-overlay {
+  opacity: 1;
+}
+
+/* Inline field validation */
+.csc-input[aria-invalid="true"],
+.csc-select[aria-invalid="true"],
+.csc-textarea[aria-invalid="true"] {
+  border-color: var(--error);
+  background: var(--pure-white);
+}
+
+.csc-field-error {
+  margin-top: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--error);
+}
+
+/* Form result message */
+.csc-form-status {
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.6;
+  border: 1px solid transparent;
+}
+
+.csc-form-status.is-success {
+  background: var(--success-bg);
+  border-color: rgba(4, 120, 87, 0.25);
+  color: var(--success);
+}
+
+.csc-form-status.is-error {
+  background: var(--error-bg);
+  border-color: rgba(198, 40, 40, 0.25);
+  color: var(--error);
+}
+
+.csc-form-status-fallback {
+  display: block;
+  margin-top: 4px;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.csc-form-status-fallback a {
+  font-weight: 700;
+  color: var(--blue-primary);
+  unicode-bidi: isolate;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Touch screens have no hover: always show gallery captions */
+@media (hover: none) {
+  .csc-gallery-overlay { opacity: 1; }
+}
+
+/* Outline buttons with inline navy text must still turn white on hover/focus */
+.csc-btn-outline[style*="--navy-900"]:hover,
+.csc-btn-outline[style*="--navy-900"]:focus-visible {
+  color: var(--pure-white) !important;
+  border-color: var(--blue-primary) !important;
 }
