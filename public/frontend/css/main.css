@@ -398,6 +398,39 @@ body.lang-ar .csc-dropdown-item:hover {
   font-size: 0.82rem;
 }
 
+/* Arabic Language Button */
+.csc-lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border: 1.5px solid var(--gray-300);
+  background: var(--pure-white);
+  color: var(--gray-700);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.csc-lang-btn img {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.csc-lang-btn:hover {
+  border-color: var(--blue-primary);
+  color: var(--blue-primary);
+  background: var(--ice-50);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
 .csc-btn-lg {
   padding: 14px 30px;
   font-size: 1rem;
