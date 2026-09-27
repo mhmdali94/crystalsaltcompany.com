@@ -1,2 +1,1 @@
 # crystalsaltcompany.com
-# crystalsaltcompany.com
