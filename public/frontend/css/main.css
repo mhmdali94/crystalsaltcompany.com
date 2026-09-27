@@ -2230,3 +2230,16 @@ body.lang-ar .csc-assay-table thead th:last-child { text-align: left; }
   transform: translateY(0) scale(0.98);
   transition-duration: 0.08s;
 }
+
+/* Products dropdown: also opens for keyboard focus; opens toward the reading side in Arabic */
+.csc-dropdown:focus-within .csc-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+body.lang-ar .csc-dropdown-menu { left: auto; right: 0; }
+
+.csc-label-optional {
+  font-weight: 500;
+  color: var(--gray-500);
+}

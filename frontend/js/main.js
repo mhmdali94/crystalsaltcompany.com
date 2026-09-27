@@ -97,6 +97,58 @@ document.addEventListener('DOMContentLoaded', () => {
     el.setAttribute('aria-expanded', el.parentElement.classList.contains('active') ? 'true' : 'false');
   });
 
+  // Products dropdown: open with click, Enter/Space or ArrowDown; close with Escape or outside click
+  document.querySelectorAll('.csc-dropdown').forEach(dropdown => {
+    const trigger = dropdown.querySelector(':scope > .csc-nav-link');
+    const menu = dropdown.querySelector('.csc-dropdown-menu');
+    if (!trigger || !menu) return;
+    menu.id = menu.id || 'csc-products-menu';
+    trigger.setAttribute('role', 'button');
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-controls', menu.id);
+    const setOpen = (open) => {
+      dropdown.classList.toggle('open', open);
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      setOpen(!dropdown.classList.contains('open'));
+    });
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        setOpen(true);
+        menu.querySelector('a')?.focus();
+      }
+    });
+    dropdown.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+        setOpen(false);
+        trigger.focus();
+      }
+    });
+    dropdown.addEventListener('focusout', (e) => {
+      if (!dropdown.contains(e.relatedTarget)) setOpen(false);
+    });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) setOpen(false);
+    });
+  });
+
+  // Keep keyboard focus inside the open mobile drawer
+  if (mobileDrawer) {
+    mobileDrawer.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab' || !mobileDrawer.classList.contains('active')) return;
+      const focusables = [...mobileDrawer.querySelectorAll('a[href], button, [role="button"]')].filter(el => el.offsetParent !== null);
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  }
+
   let drawerReturnFocus = null;
   if (mobileToggle && mobileDrawer) {
     mobileDrawer.id = mobileDrawer.id || 'csc-mobile-drawer';
@@ -130,7 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Stats Counter Animation
   const statNumbers = document.querySelectorAll('.csc-stat-num[data-target]');
-  if (statNumbers.length > 0) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (statNumbers.length > 0 && !prefersReducedMotion) {
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -338,7 +391,16 @@ document.addEventListener('DOMContentLoaded', () => {
       input.setAttribute('aria-describedby', err.id);
     }
 
+    // Arabic-Indic (٠-٩) and Persian (۰-۹) digits -> 0-9, so Arabic keyboards work in every field
+    const toLatinDigits = (text) => text
+      .replace(/[\u0660-\u0669]/g, d => String(d.charCodeAt(0) - 0x0660))
+      .replace(/[\u06F0-\u06F9]/g, d => String(d.charCodeAt(0) - 0x06F0));
+
     function validateField(input) {
+      if (input.type === 'tel' || input.name === 'quantity') {
+        const normalized = toLatinDigits(input.value);
+        if (normalized !== input.value) input.value = normalized;
+      }
       const value = input.value.trim();
       let error = '';
       if (input.required && !value) {
