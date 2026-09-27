@@ -39,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawerOverlay = document.querySelector('.csc-drawer-overlay');
   const drawerClose = document.querySelector('.csc-drawer-close');
 
+  // Icon-only header buttons keep their label as a tooltip
+  document.querySelectorAll('.csc-header-actions .csc-btn-outline').forEach(btn => {
+    if (!btn.title) btn.title = btn.textContent.trim();
+  });
+
   // Keyboard & screen-reader access for non-button controls (divs/spans used as buttons)
   const isArabicPage = document.body.classList.contains('lang-ar');
   const controlLabels = isArabicPage ? {
