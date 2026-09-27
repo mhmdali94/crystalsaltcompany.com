@@ -3,7 +3,7 @@
    Luminous, Pure, Fresh Salt Mineral & Maritime Aesthetic
    =================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* Fonts are loaded with <link> tags in each page <head> (parallel, non-blocking chain). */
 
 :root {
   --font-en: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

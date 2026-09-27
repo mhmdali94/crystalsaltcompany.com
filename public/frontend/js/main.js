@@ -39,6 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawerOverlay = document.querySelector('.csc-drawer-overlay');
   const drawerClose = document.querySelector('.csc-drawer-close');
 
+  // Hero video: only fetch on larger screens with a normal connection and motion allowed
+  const heroVideo = document.querySelector('video[data-hero-video]');
+  if (heroVideo) {
+    const conn = navigator.connection || {};
+    const slowNet = conn.saveData || /(^|-)2g|3g/.test(conn.effectiveType || '');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const wideScreen = window.matchMedia('(min-width: 769px)').matches;
+    if (wideScreen && !slowNet && !reduceMotion) {
+      heroVideo.querySelectorAll('source[data-src]').forEach(src => { src.src = src.dataset.src; });
+      heroVideo.load();
+      heroVideo.play().catch(() => {});
+    }
+  }
+
   // Icon-only header buttons keep their label as a tooltip
   document.querySelectorAll('.csc-header-actions .csc-btn-outline').forEach(btn => {
     if (!btn.title) btn.title = btn.textContent.trim();
